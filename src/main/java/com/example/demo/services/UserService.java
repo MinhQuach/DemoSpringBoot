@@ -34,6 +34,8 @@ public interface UserService {
 
 	User save(User entity);
 
+	boolean checkLogin(String username, String password);
+
 	
 	
 }

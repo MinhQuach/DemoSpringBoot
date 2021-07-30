@@ -75,4 +75,13 @@ public class UserServiceImpl implements UserService {
 		userRepository.deleteAll();
 	}
 	
+	@Override
+	public boolean checkLogin(String username, String password) {
+		Optional <User> optionalUser = findById(username);
+		if(optionalUser.isPresent() && optionalUser.get().getPassword().equals(password)) {
+			return true;
+		}
+		return false;
+	}
+	
 }
