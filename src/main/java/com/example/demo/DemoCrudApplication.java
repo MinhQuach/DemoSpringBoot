@@ -1,13 +1,13 @@
-package org.o7planning.hellospringboot;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HelloSpringBoot1Application {
+public class DemoCrudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloSpringBoot1Application.class, args);
+		SpringApplication.run(DemoCrudApplication.class, args);
 	}
 
 }

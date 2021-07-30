@@ -1,10 +1,10 @@
-package org.o7planning.hellospringboot;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloSpringBoot1ApplicationTests {
+class DemoCrudApplicationTests {
 
 	@Test
 	void contextLoads() {
