@@ -19,11 +19,13 @@ import com.example.demo.models.User;
 import com.example.demo.models.UserDAO;
 import com.example.demo.services.UserService;
 
-@Controller
+@Controller // giúp Spring xác định đây là một controller
 public class UserController {
+	// khai báo Service để triển khai các phương thức CRUD
 	@Autowired
 	UserService userService;
-
+	// GetMapping, PostMapping, RequestMapping giúp chúng ta có thể xứ lý dữ liệu khi chúng ta gọi đến no
+	// Interface model giúp chúng ta truyền dữ liệu từ controller sang view để hiển thị
 	@GetMapping("/register")
 	public String addOrEdit(ModelMap model) {
 		User u = new User();
@@ -31,7 +33,9 @@ public class UserController {
 		model.addAttribute("ACTION", "saveOrUpdate");
 		return "register-user";
 	}
-
+	
+	//@ModelAttribute chúng ta sử dụng như một cầu nói giữa controller và view. Tầng view chúng ta sử dụng model để lấy các giá trị 
+	// người dùng và gắn vào thuộc tính modelAttribute.
 	@PostMapping("/saveOrUpdate")
 	public String saveOrUpdate(ModelMap model, @ModelAttribute("USER") User user) {
 //		UserDAO dao = new UserDAO();
@@ -59,6 +63,8 @@ public class UserController {
 //			return "login";
 //		}
 //	}
+	
+	//@PathVariable được dùng để xử lý những URL động, có một hoặc nhiều parameter trên URL
 
 	@RequestMapping("/edit/{username}")
 	public String edit(ModelMap model, @PathVariable(name = "username") String username) {
@@ -101,6 +107,7 @@ public class UserController {
 	}
 
 	// check user login
+	//  @RequestParame để bắt các giá trị các tham số mà người dùng truyền vào trên url theo định dạng key và value(username == ....).
 	@PostMapping("/checkLogin")
 	public String checkLogin(ModelMap model, @RequestParam("username") String username,
 			@RequestParam("password") String password, HttpSession ses) {

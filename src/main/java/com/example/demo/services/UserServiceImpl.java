@@ -11,6 +11,9 @@ import com.example.demo.repositories.UserRepository;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+	// Chúng ta sẽ triển khai bussiness logic bên này khi kế thừa Service
+	// @Autowire giúp chúng ta khai báo Repository vào ServiceImpl
 	
 	@Autowired
 	UserRepository userRepository;

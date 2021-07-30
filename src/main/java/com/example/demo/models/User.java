@@ -7,11 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="Users")
+@Entity // xac dinh lop hien tại là một entity
+@Table(name="Users") // xác định tên mà bảng ánh xạ sang database
 public class User implements Serializable {
-	@Id
-	@Column(name = "username", length = 50)
+	@Id // xác định primary key trong bảng CSDL
+	@Column(name = "username", length = 50) // xác định thuộc tính hiện tại của một cột trong CSDL
 	private String username;
 	
 	@Column(name = "password", length = 50)

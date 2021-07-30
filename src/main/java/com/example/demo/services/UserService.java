@@ -9,6 +9,7 @@ import com.example.demo.models.User;
 import com.example.demo.repositories.UserRepository;
 
 public interface UserService {
+	// Đây là nơi xử lý các bussiness logic
 
 	void deleteAll();
 
